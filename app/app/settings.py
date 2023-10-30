@@ -39,6 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bases',
     'inv',
+    'cmp',
+    'fac',
+    'django_userforeignkey',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -49,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_userforeignkey.middleware.UserForeignKeyMiddleware',
 ]
 
 ROOT_URLCONF = 'app.urls'
@@ -125,3 +130,7 @@ USE_L10N = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR,'static'),)
+
+LOGIN_URL='login'
+LOGIN_REDIRECT_URL='/'
+LOGOUT_REDIRECT_URL='/login/'
